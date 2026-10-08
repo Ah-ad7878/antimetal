@@ -18,7 +18,7 @@ class _HeroTextSectionState extends State<HeroTextSection>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: Duration(seconds: 3),
     );
 
     _animation = Tween<Offset>(
@@ -46,7 +46,7 @@ class _HeroTextSectionState extends State<HeroTextSection>
             style: TextStyle(
               color: Color(0xFF1C1C1C),
               fontSize: 52,
-              fontWeight: .w400,
+              fontWeight: FontWeight.w400,
               height: 1.1,
               letterSpacing: -1,
             ),
@@ -54,7 +54,8 @@ class _HeroTextSectionState extends State<HeroTextSection>
         ),
 
         SizedBox(height: 24),
-        SlideTransition(position: _animation,
+        SlideTransition(
+          position: _animation,
           child: Text(
             'Antimetal is the autonomous system for production.\nContinuously understanding, operating, and improving\nyour environment',
             style: TextStyle(

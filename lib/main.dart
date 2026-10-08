@@ -1,10 +1,21 @@
 import 'package:antimetal/HeroText.dart';
 import 'package:antimetal/Navbar.dart';
 import 'package:antimetal/graphic.dart';
+import 'package:antimetal/page_two.dart';
+import 'package:antimetal/text_with_graph.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(NameBar());
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const NameBar();
+  }
 }
 
 class NameBar extends StatelessWidget {
@@ -59,6 +70,25 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(height: 350, child: GraphClass()),
                         ],
                       ),
+
+                SizedBox(height: 100),
+                Container(
+                  width: double.infinity,
+                  height: 0.07,
+                  color: Colors.black,
+                ),
+
+                SizedBox(height: 10),
+                PageTwo(),
+                SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  height: 0.07,
+                  color: Colors.black,
+                ),
+
+                SizedBox(height: 12),
+                TextAndGraph(),
               ],
             ),
           ),
