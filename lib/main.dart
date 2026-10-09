@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                 ThirdPage(scrollController: _scrollController),
 
                 SizedBox(height: 40),
-                Picpage(),
+                ContinuousVideoSection()
               ],
             ),
           ),
