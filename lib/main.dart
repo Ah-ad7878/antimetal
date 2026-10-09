@@ -2,6 +2,7 @@ import 'package:antimetal/HeroText.dart';
 import 'package:antimetal/Navbar.dart';
 import 'package:antimetal/graphic.dart';
 import 'package:antimetal/page_two.dart';
+import 'package:antimetal/picPage.dart';
 import 'package:antimetal/text_with_graph.dart';
 import 'package:antimetal/third_page.dart';
 import 'package:flutter/material.dart';
@@ -119,6 +120,9 @@ class _HomePageState extends State<HomePage> {
 
                 SizedBox(height: 50),
                 ThirdPage(scrollController: _scrollController),
+
+                SizedBox(height: 40),
+                Picpage(),
               ],
             ),
           ),
