@@ -21,10 +21,10 @@ class _HeroTextSectionState extends State<HeroTextSection>
       duration: Duration(seconds: 3),
     );
 
-    _animation = Tween<Offset>(
-      begin: Offset(-1.0, 0),
-      end: Offset.zero,
-    ).animate(_controller);
+    _animation = Tween<Offset>(begin: Offset(-1.0, 0), end: Offset.zero)
+        .animate(
+          (CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic)),
+        );
     _controller.forward();
   }
 
