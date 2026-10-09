@@ -74,7 +74,7 @@ class _HeroTextSectionState extends State<HeroTextSection>
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     backgroundColor: Colors.grey.shade600,
-                    duration: Duration(milliseconds: 300),
+                    duration: Duration(milliseconds: 500),
                     content: Text(
                       'Demo Booked Scussfully',
                       style: TextStyle(color: Colors.white, fontSize: 20),

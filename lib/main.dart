@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 100),
                 Container(
                   width: double.infinity,
-                  height: 0.09,
+                  height: 1,
                   color: Colors.black,
                 ),
 
@@ -83,11 +83,11 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 10),
                 Container(
                   width: double.infinity,
-                  height: 0.09,
+                  height: 1,
                   color: Colors.black,
                 ),
 
-                SizedBox(height: 15),
+                SizedBox(height: 50),
                 TextAndGraph(),
               ],
             ),
