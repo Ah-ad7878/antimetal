@@ -23,7 +23,7 @@ class _ThirdPageState extends State<ThirdPage>
     );
 
     _animation = Tween<Offset>(
-      begin: const Offset(-0.5, 0),
+      begin: const Offset(0, 0.8),
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
 
