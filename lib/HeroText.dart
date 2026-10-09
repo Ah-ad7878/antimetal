@@ -2,7 +2,8 @@ import 'package:antimetal/DashBord_cutomPainter.dart';
 import 'package:flutter/material.dart';
 
 class HeroTextSection extends StatefulWidget {
-  const HeroTextSection({super.key});
+  final ScrollController scrolController;
+  const HeroTextSection({super.key, required this.scrolController});
 
   @override
   State<HeroTextSection> createState() => _HeroTextSectionState();
@@ -10,6 +11,7 @@ class HeroTextSection extends StatefulWidget {
 
 class _HeroTextSectionState extends State<HeroTextSection>
     with SingleTickerProviderStateMixin {
+  bool _isAnimatedAtTop = true;
   late AnimationController _controller;
   late Animation<Offset> _animation;
 
@@ -18,14 +20,33 @@ class _HeroTextSectionState extends State<HeroTextSection>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 1),
     );
 
     _animation = Tween<Offset>(begin: Offset(-1.0, 0), end: Offset.zero)
         .animate(
           (CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic)),
         );
+    widget.scrolController.addListener(_onScroll);
     _controller.forward();
+  }
+
+  void _onScroll() {
+    if (!widget.scrolController.hasClients) return;
+
+    final double currentOffset = widget.scrolController.offset;
+
+    if (currentOffset <= 20) {
+      if (!_isAnimatedAtTop) {
+        _isAnimatedAtTop = true;
+        _controller.reset();
+        _controller.forward();
+      }
+    } else if (currentOffset > 200) {
+      if (_isAnimatedAtTop) {
+        _isAnimatedAtTop = false;
+      }
+    }
   }
 
   @override

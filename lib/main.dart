@@ -3,6 +3,7 @@ import 'package:antimetal/Navbar.dart';
 import 'package:antimetal/graphic.dart';
 import 'package:antimetal/page_two.dart';
 import 'package:antimetal/text_with_graph.dart';
+import 'package:antimetal/third_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,6 +40,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDesktop = MediaQuery.sizeOf(context).width > 900;
@@ -46,6 +61,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color(0xFFD2D3C9),
       body: SafeArea(
         child: SingleChildScrollView(
+          controller: _scrollController,
           child: Padding(
             padding: EdgeInsetsGeometry.symmetric(
               horizontal: 40.0,
@@ -56,16 +72,21 @@ class _HomePageState extends State<HomePage> {
                 Navbar(),
                 SizedBox(height: 60),
                 isDesktop
-                    ? const Row(
+                    ? Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Expanded(flex: 5, child: HeroTextSection()),
+                          Expanded(
+                            flex: 5,
+                            child: HeroTextSection(
+                              scrolController: _scrollController,
+                            ),
+                          ),
                           Expanded(flex: 6, child: GraphClass()),
                         ],
                       )
-                    : const Column(
+                    : Column(
                         children: [
-                          HeroTextSection(),
+                          HeroTextSection(scrolController: _scrollController),
                           SizedBox(height: 40),
                           SizedBox(height: 350, child: GraphClass()),
                         ],
@@ -89,6 +110,15 @@ class _HomePageState extends State<HomePage> {
 
                 SizedBox(height: 50),
                 TextAndGraph(),
+                SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  height: 0.09,
+                  color: Colors.black,
+                ),
+
+                SizedBox(height: 50),
+                ThirdPage(scrollController: _scrollController),
               ],
             ),
           ),
