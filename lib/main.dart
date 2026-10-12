@@ -1,5 +1,6 @@
 import 'package:antimetal/HeroText.dart';
 import 'package:antimetal/Navbar.dart';
+import 'package:antimetal/fifth_page.dart';
 import 'package:antimetal/graphic.dart';
 import 'package:antimetal/page_four.dart';
 import 'package:antimetal/page_two.dart';
@@ -133,6 +134,15 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SizedBox(height: 40),
                 FourthPage(),
+
+                SizedBox(height: 40),
+                Container(
+                  width: double.infinity,
+                  height: 0.1,
+                  color: Colors.black,
+                ),
+                SizedBox(height: 40),
+                FifthPage(),
               ],
             ),
           ),
