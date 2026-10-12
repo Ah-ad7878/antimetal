@@ -210,6 +210,7 @@ class _ThirdPageState extends State<ThirdPage>
           'A layer that owns \n the runtime.',
           'At its core sits a live world model, a continuous understanding of how your stack behaves. On top, an army of specialized agents acts on the model to diagnose, fix, prevent, and answer any question.',
         ),
+
         const SizedBox(height: 25),
         Padding(
           padding: const EdgeInsets.only(bottom: 100),
