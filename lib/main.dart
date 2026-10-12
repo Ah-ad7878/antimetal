@@ -5,6 +5,7 @@ import 'package:antimetal/graphic.dart';
 import 'package:antimetal/page_four.dart';
 import 'package:antimetal/page_two.dart';
 import 'package:antimetal/picPage.dart';
+import 'package:antimetal/six_page.dart';
 import 'package:antimetal/text_with_graph.dart';
 import 'package:antimetal/third_page.dart';
 import 'package:flutter/material.dart';
@@ -143,6 +144,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 SizedBox(height: 40),
                 FifthPage(),
+
+                SizedBox(height: 40),
+                SixPage(),
               ],
             ),
           ),
