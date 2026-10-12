@@ -14,14 +14,13 @@ class _ContinuousVideoSectionState extends State<ContinuousVideoSection> {
   @override
   void initState() {
     super.initState();
-    _controller =
-        VideoPlayerController.asset('assets/videos/dashboard_demo.mp4')
-          ..initialize().then((_) {
-            setState(() {});
-            _controller.setLooping(true);
-            _controller.setVolume(0.0);
-            _controller.play();
-          });
+    _controller = VideoPlayerController.asset('assets/videos/graph.mp4')
+      ..initialize().then((_) {
+        setState(() {});
+        _controller.setLooping(true);
+        _controller.setVolume(0.0);
+        _controller.play();
+      });
   }
 
   @override

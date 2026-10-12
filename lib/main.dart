@@ -1,6 +1,7 @@
 import 'package:antimetal/HeroText.dart';
 import 'package:antimetal/Navbar.dart';
 import 'package:antimetal/graphic.dart';
+import 'package:antimetal/page_four.dart';
 import 'package:antimetal/page_two.dart';
 import 'package:antimetal/picPage.dart';
 import 'package:antimetal/text_with_graph.dart';
@@ -44,15 +45,15 @@ class _HomePageState extends State<HomePage> {
   late ScrollController _scrollController;
 
   @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController();
-  }
-
-  @override
   void dispose() {
     _scrollController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
   }
 
   @override
@@ -122,7 +123,16 @@ class _HomePageState extends State<HomePage> {
                 ThirdPage(scrollController: _scrollController),
 
                 SizedBox(height: 40),
-                ContinuousVideoSection()
+                ContinuousVideoSection(),
+
+                SizedBox(height: 40),
+                Container(
+                  width: double.infinity,
+                  height: 0.1,
+                  color: Colors.black,
+                ),
+                SizedBox(height: 40),
+                FourthPage(),
               ],
             ),
           ),
